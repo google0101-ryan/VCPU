@@ -8,9 +8,9 @@ A virtual CPU written in C++.
 4: print reg0 into the console  
 
 # Registers
-reg0: General Purpose Register
-reg1: General Purpose Regsiter
-reg2: Arithmetic Result Storage
+reg0: General Purpose Register  
+reg1: General Purpose Regsiter  
+reg2: Arithmetic Result Storage  
 
 # NOTES
 You currently have to manually input program into RAM. The above opcodes are the only ones implemented. Currently does not support binary.
