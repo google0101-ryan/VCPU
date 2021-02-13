@@ -68,7 +68,7 @@ void CPU::Load1(byte value)
 
 void CPU::Add()
 {
-    regs[0] = regs[0] + regs[1];
+    regs[2] = regs[0] + regs[1];
     pc++;
 }
 
@@ -76,7 +76,7 @@ void CPU::Print()
 {
     cout << endl;
     cout << endl;
-    cout << (int)regs[0] << endl;
+    cout << (int)regs[2] << endl;
     cout << endl;
     cout << endl;
     ++pc;
