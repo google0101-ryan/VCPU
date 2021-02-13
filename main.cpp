@@ -18,14 +18,16 @@ int main()
     cout << "Number 2 to add: ";
     cin >> num2;
 
-    RAM->write(1, 1);
-    RAM->write(2, num1);
-    RAM->write(3, 2);
+    RAM->write(1, 01); // Write num1 to reg[0]
+    RAM->write(2, num1); 
+    RAM->write(3, 10); //Write num2 to reg[1]
     RAM->write(4, num2);
-    RAM->write(5, 3);
-    RAM->write(6, 4);
-    RAM->write(7, 5);
-    RAM->write(8, 4);
+    RAM->write(5, 11); // Add reg[0] and reg[1]; store in reg[2]
+    RAM->write(6, 100); //Call interrupt 0x10 (Print())
+    RAM->write(7, 0x10);
+    RAM->write(8, 101); // Multiply reg[0] by reg[1]; Store in reg[2]
+    RAM->write(9, 100); // Call interrupt 0x10 (Print())
+    RAM->write(10, 0x10);
 
     cout << "Memory Contents: " << endl;
 

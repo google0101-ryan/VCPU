@@ -35,21 +35,21 @@ void CPU::Decode(byte opcode)
     case 0:
         m_Halt = true;
         break;
-    case 1:
+    case 01:
         Load0(RAM->read(++pc));
         pc++;
         break;
-    case 2:
+    case 10:
         Load1(RAM->read(++pc));
         pc++;
         break;
-    case 3:
+    case 11:
         Add();
         break;
-    case 4:
-        Print();
+    case 100:
+        Int(RAM->read(++pc));
         break;
-    case 5:
+    case 101:
         Mul();
         break;
     default:
@@ -77,8 +77,24 @@ void CPU::Add()
 
 void CPU::Mul()
 {
-    regs[2] = regs[0] * regs[1];
+    int tmp1 = (int)regs[0];
+    int tmp2 = (int)regs[1];
+    regs[2] = (byte)(tmp1 * tmp2);
     pc++;
+}
+
+void CPU::Int(byte interrupt)
+{
+    switch(interrupt)
+    {
+    case 16:
+        Print();
+        break;
+    default:
+        cout << "Unknown Interrupt! Halting" << endl;
+        m_Halt = true;
+        break;
+    }
 }
 
 void CPU::Print()
