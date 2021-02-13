@@ -24,6 +24,8 @@ int main()
     RAM->write(4, num2);
     RAM->write(5, 3);
     RAM->write(6, 4);
+    RAM->write(7, 5);
+    RAM->write(8, 4);
 
     cout << "Memory Contents: " << endl;
 

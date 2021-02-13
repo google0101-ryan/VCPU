@@ -33,6 +33,7 @@ public:
     void Load1(byte value);
     void Add();
     void Print();
+    void Mul();
 
     byte pc;
 };

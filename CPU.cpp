@@ -49,6 +49,9 @@ void CPU::Decode(byte opcode)
     case 4:
         Print();
         break;
+    case 5:
+        Mul();
+        break;
     default:
         cout << "Unknown opcode!" << endl;
         m_Halt = true;
@@ -69,6 +72,12 @@ void CPU::Load1(byte value)
 void CPU::Add()
 {
     regs[2] = regs[0] + regs[1];
+    pc++;
+}
+
+void CPU::Mul()
+{
+    regs[2] = regs[0] * regs[1];
     pc++;
 }
 
