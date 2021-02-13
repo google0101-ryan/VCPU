@@ -11,5 +11,5 @@ A virtual CPU written in C++.
 You currently have to manually input program into RAM. The above opcodes are the only ones implemented. Currently does not support binary.
 
 # COMPILING
-```make
-   make run```
+```make```  
+```make run```
