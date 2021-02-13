@@ -8,4 +8,6 @@ all: VCPU
 
 VCPU: $(OBJFILES)
 	$(CC) -o $@ $^
+
+run:
 	./VCPU
