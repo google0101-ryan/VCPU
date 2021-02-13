@@ -42,4 +42,6 @@ int main()
     {
         cout << "Reg[" << (int)i << "]: " << (int)cpu->regs[i] << endl;
     }
+
+    cout << "Program Counter: " << (int)cpu->pc << endl; 
 }
