@@ -17,7 +17,8 @@ reg1: General Purpose Regsiter
 reg2: Arithmetic Result Storage  
 
 # NOTES
-You currently have to manually input program into RAM. The above opcodes are the only ones implemented. Currently does not support binary.
+ - The above opcodes are the only ones implemented.  
+ - No assembler; programs must be written in final binary format.
 
 # COMPILING
 ```make```  
