@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "CPU.h"
+#include "memory.h"
 
 using namespace std;
 
@@ -10,6 +11,9 @@ int main()
     CPU *cpu = new CPU(RAM);
     bool debug = false;
 
+		RAM->readFile("src/prog.asm");
+
+/*
     int num1;
     int num2;
 
@@ -28,7 +32,7 @@ int main()
     RAM->write(8, 101); // Multiply reg[0] by reg[1]; Store in reg[2]
     RAM->write(9, 100); // Call interrupt 0x10 (Print())
     RAM->write(10, 0x10);
-
+*/
     cout << "Memory Contents: " << endl;
 
     for (byte i = 0; i < 25; ++i)

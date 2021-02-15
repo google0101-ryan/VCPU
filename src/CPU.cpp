@@ -35,7 +35,7 @@ void CPU::Decode(byte opcode)
     case 0:
         m_Halt = true;
         break;
-    case 01:
+    case 1:
         Load0(RAM->read(++pc));
         pc++;
         break;
@@ -87,7 +87,7 @@ void CPU::Int(byte interrupt)
 {
     switch(interrupt)
     {
-    case 16:
+    case 10:
         Print();
         break;
     default:

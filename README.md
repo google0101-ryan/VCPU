@@ -9,7 +9,7 @@ A virtual CPU written in C++.
 101: Multiply reg0 and reg1; store result in reg2
 
 # Interrupts
-0x10: Print reg2 into the console
+10: Print reg2 into the console
 
 # Registers
 reg0: General Purpose Register  
