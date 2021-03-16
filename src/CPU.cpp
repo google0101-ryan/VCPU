@@ -19,7 +19,7 @@ void CPU::Run()
         RAM->write(0, Fetch());
         Decode(RAM->read(0));
     }
-    cout << "HALT Encountered" << endl;
+    cout << "\nHALT Encountered" << endl;
 }
 
 byte CPU::Fetch()
@@ -51,6 +51,14 @@ void CPU::Decode(byte opcode)
         break;
     case 101:
         Mul();
+        break;
+    case 110:
+        printf("Push\n");
+        Push(RAM->read(++pc));
+        break;
+    case 111:
+        printf("Pop A\n");
+        regs[R0] = Pop();
         break;
     default:
         cout << "Unknown opcode!" << endl;
@@ -95,6 +103,21 @@ void CPU::Int(byte interrupt)
         m_Halt = true;
         break;
     }
+}
+
+void CPU::Push(byte value) 
+{
+    RAM->write(sp, value);
+    sp++;
+    pc++;
+}
+
+byte CPU::Pop()
+{
+    uint8_t value = RAM->read(sp);
+    sp--;
+    pc++;
+    return value;
 }
 
 void CPU::Print()

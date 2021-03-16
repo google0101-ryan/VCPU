@@ -7,7 +7,7 @@ typedef uint16_t byte;
 class memory
 {
 private:
-    byte RAM[25];
+    byte RAM[255];
 
 public:
     byte read(byte address);

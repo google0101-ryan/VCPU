@@ -11,7 +11,7 @@ int main()
     CPU *cpu = new CPU(RAM);
     bool debug = false;
 
-		RAM->readFile("src/prog.asm");
+		RAM->readFile("src/prog.vasm");
 
 /*
     int num1;
@@ -35,7 +35,7 @@ int main()
 */
     cout << "Memory Contents: " << endl;
 
-    for (byte i = 0; i < 25; ++i)
+    for (auto i = 0; i < 255; ++i)
     {
         cout << "Address[" << (int)i << "]: " << (int)RAM->read(i) << endl;
     }

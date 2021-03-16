@@ -6,7 +6,7 @@
 
 memory::memory()
 {
-    for (byte i = 0; i < 25; ++i)
+    for (byte i = 0; i < 255; i++)
     {
         RAM[i] = 0;
     }

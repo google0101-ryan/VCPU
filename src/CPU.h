@@ -9,11 +9,13 @@ public:
     {
         R0,
         R1,
-        PC,
+        R2,
         R_COUNT
     };
 
     byte regs[R_COUNT];
+
+    byte sp = 0x30;
 private:
 
     bool m_Halt;
@@ -35,6 +37,8 @@ public:
     void Print();
     void Mul();
     void Int(byte interrupt);
+    void Push(byte value);
+    byte Pop();
 
     byte pc;
 };
