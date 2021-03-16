@@ -57,7 +57,7 @@ void CPU::Decode(byte opcode)
         Push(RAM->read(++pc));
         break;
     case 111:
-        printf("Pop A\n");
+        printf("Pop reg[0]\n");
         regs[R0] = Pop();
         break;
     default:
